@@ -18,16 +18,17 @@ def convertir_romano(romano):
         'D': 500,
         'M': 1000
     }
+#XVIII
 #verificamos que el numero introducido tenga caracteres romanos VALIDOS
 #por cada caracter de romano, verificamos si ese caracter está presente en el diccionario
     es_valido = all(caracter in valores_romanos for caracter in romano)
     if not es_valido:
         print("Número inválido. Reformula el número romano");
         return
-    else:
-            print("Buena pa")
+    #el flujo ya no llega aqui si los caracteres no pasan el filtro
+    print("Aqui llega si es un numero valido")
 
-convertir_romano("IVXLCDM")
+convertir_romano("IVXLCDMeeee")
     
 
             
