@@ -6,6 +6,16 @@
 #REGLAS PRINCIPALES A VALIDAR
 #Que todo el numero romano contenga un caracter valido, sino tronar el programa
 #El tope de numeros seguidos es de 3
+#NO SE PUEDEN REPETIR (V,L,D) (5,50,500)
+#SOLO PUEDEN RESTAR: (I,X,C) y UNICAMENTE a los DOS simbolos inmediatamente superiores, por lo
+#que estas son las combinaciones de restas posibles permitidas:
+#IV
+#IX
+#XL
+#XC
+#CD
+#CM
+
 
 #los diccionarios son equivalentes a un objeto de js
 def convertir_romano(romano):
@@ -18,7 +28,6 @@ def convertir_romano(romano):
         'D': 500,
         'M': 1000
     }
-#XVIII
 #verificamos que el numero introducido tenga caracteres romanos VALIDOS
 #por cada caracter de romano, verificamos si ese caracter está presente en el diccionario
     es_valido = all(caracter in valores_romanos for caracter in romano)
