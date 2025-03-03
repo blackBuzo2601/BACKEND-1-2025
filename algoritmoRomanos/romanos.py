@@ -3,9 +3,12 @@
 #DESARROLLO BACKEND I
 
 
-def convertir_romano(romano):
-    
+#REGLAS PRINCIPALES A VALIDAR
+#Que todo el numero romano contenga un caracter valido, sino tronar el programa
+#El tope de numeros seguidos es de 3
+
 #los diccionarios son equivalentes a un objeto de js
+def convertir_romano(romano):
     valores_romanos = {
         'I': 1,
         'V': 5,
@@ -15,24 +18,17 @@ def convertir_romano(romano):
         'D': 500,
         'M': 1000
     }
+#verificamos que el numero introducido tenga caracteres romanos VALIDOS
+#por cada caracter de romano, verificamos si ese caracter está presente en el diccionario
+    es_valido = all(caracter in valores_romanos for caracter in romano)
+    if not es_valido:
+        print("Número inválido. Reformula el número romano");
+        return
+    else:
+            print("Buena pa")
 
-    resultado = 0
-
+convertir_romano("IVXLCDM")
     
-    for i in range(len(romano)):
-      
-        if i + 1 < len(romano) and valores_romanos[romano[i]] < valores_romanos[romano[i + 1]]:
-            resultado -= valores_romanos[romano[i]]
-        else:
-         
-            resultado += valores_romanos[romano[i]]
-
-    return resultado
-
-
-print(convertir_romano("XIV"))  
-print(convertir_romano("IX"))   
-print(convertir_romano("MMXXI")) 
 
             
 
