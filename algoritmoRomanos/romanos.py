@@ -35,25 +35,37 @@ def convertir_romano(romano):
         print("Número inválido. Reformula el número romano")
         return
     #el flujo ya no llega aqui si los caracteres no pasan el filtro
-    contador=0
+    contador=0 #para contar la cantidad de veces que está repitiendose una misma letra
     letra_actual=""
     for i in range(len(romano)): #iterar por cada letra de romano
         letra_actual=romano[i]
         if i<1:
-            print("PRIMERA VEZ") 
+            print("PRIMERA LETRA") 
             contador=contador+1
         else: #a partir de la segunda letra empiezan las evaluaciones aqui
-            if letra_actual==romano[i-1]: #comprobar si actual es lo mismo que el anteriorj
-                print("REPETIDO DETECTADO"+ romano[i])
+            if contador<3:
+                if letra_actual==romano[i-1]: #comprobar si actual es lo mismo que el anteriorj
+                    print("REPETIDO DETECTADO"+ romano[i])
+                    contador=contador+1
+                else:
+                    print("No es una letra repetida a la anterior"+romano[i])
+                    contador=0
             else:
-                print("No es una letra repetida a la anterior"+romano[i])
+            #EL FLUJO AVANZA AQUI CUANDO YA HUBO 3 REPETICIONES
+                if letra_actual==romano[i-1]:
+                    print("ERROR, se ha detectado una cuarta letra repetida")
+                    return
+                else:
+                    print("No es letra repetida, puedes continuar")
+                    contador=0
 
-            
+
+
 
         
-
-
-convertir_romano("XXCMXX")
+            
+#XXXXMXX   
+convertir_romano("IIIXIXIXIXIIII")
     
 
             
