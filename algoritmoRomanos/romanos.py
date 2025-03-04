@@ -32,12 +32,28 @@ def convertir_romano(romano):
 #por cada caracter de romano, verificamos si ese caracter está presente en el diccionario
     es_valido = all(caracter in valores_romanos for caracter in romano)
     if not es_valido:
-        print("Número inválido. Reformula el número romano");
+        print("Número inválido. Reformula el número romano")
         return
     #el flujo ya no llega aqui si los caracteres no pasan el filtro
-    print("Aqui llega si es un numero valido")
+    contador=0
+    letra_actual=""
+    for i in range(len(romano)): #iterar por cada letra de romano
+        letra_actual=romano[i]
+        if i<1:
+            print("PRIMERA VEZ") 
+            contador=contador+1
+        else: #a partir de la segunda letra empiezan las evaluaciones aqui
+            if letra_actual==romano[i-1]: #comprobar si actual es lo mismo que el anteriorj
+                print("REPETIDO DETECTADO"+ romano[i])
+            else:
+                print("No es una letra repetida a la anterior"+romano[i])
 
-convertir_romano("IVXLCDMeeee")
+            
+
+        
+
+
+convertir_romano("XXCMXX")
     
 
             
