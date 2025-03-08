@@ -59,7 +59,6 @@ def convertir_romano(romano):
                     print("No es letra repetida, puedes continuar")
                     contador=0
 
-#hay que continuar
 
 
 
